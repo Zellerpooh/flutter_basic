@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/widget/ThemeTestRoute.dart';
+import 'package:flutter_basic/widget/gesture_detector.dart';
+import 'package:flutter_basic/widget/row_demo.dart';
+import 'package:flutter_basic/widget/scroll_demo.dart';
 
+import 'advanced/custom_paint.dart';
+import 'advanced/custom_widget.dart';
+import 'advanced/gradient_circular_progress.dart';
+import 'anim/animation_demo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/navigator_demo.dart';
+import 'demo/material_components.dart';
+import 'widget/switch_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,11 +24,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/form',
+      initialRoute: '/gradient_circular',
       routes: {
         '/': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
         '/form': (context) => FormDemo(),
+        '/mdc': (context) => MaterialComponents(),
+        '/switch': (context) => SwitchAndCheckBoxDemo(),
+        '/row': (context) => RowAndColumnDemo(),
+        '/scroll': (context) => ScrollDemo(),
+        '/theme': (context) => ThemeTestRoute(),
+        '/gesture': (context) => GestureDetectorDemo(),
+        '/animation': (context) => AnimationDemo(),
+        '/custom': (context) => CustomWidgetDemo(),
+        '/custom_paint': (context) => CustomPaintDemo(),
+        '/gradient_circular':(context)=>GradientCircularProgressDemo(),
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
