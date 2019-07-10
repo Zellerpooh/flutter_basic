@@ -14,6 +14,8 @@ import 'demo/layout_demo.dart';
 import 'demo/listview_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/material_components.dart';
+import 'network/file_operation.dart';
+import 'network/http_demo.dart';
 import 'widget/switch_demo.dart';
 
 void main() => runApp(MyApp());
@@ -24,9 +26,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/gradient_circular',
+      initialRoute: '/http_test',
       routes: {
-        '/': (context) => Home(),
+        '/home': (context) => Home(),
         '/about': (context) => Page(title: 'About'),
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
@@ -38,7 +40,9 @@ class MyApp extends StatelessWidget {
         '/animation': (context) => AnimationDemo(),
         '/custom': (context) => CustomWidgetDemo(),
         '/custom_paint': (context) => CustomPaintDemo(),
-        '/gradient_circular':(context)=>GradientCircularProgressDemo(),
+        '/gradient_circular': (context) => GradientCircularProgressDemo(),
+        '/file_operation': (context) => FileOperationRoute(),
+        '/http_test': (context) => HttpTestDemo(),
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
